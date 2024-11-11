@@ -13,11 +13,12 @@ struct IngredientDetailView: View {
     @Environment(\.isEnabled) var isEnabled
     @EnvironmentObject var dataModel: SharedDataModel
     @EnvironmentObject var formatters: Formatters
-  
-  
+    
+    
     @Binding var ingredient: Ingredient
     @State private var isEditing = false
     @State private var isWeightType = false
+    @State private var selectedAllergens: [String] = []
     @State private var isAdditionalInfoOpen = false
     
     
@@ -229,7 +230,13 @@ struct IngredientDetailView: View {
                                 }
                                 HStack{
                                      // create a list of allergens including checkboxes to the left of them.
-                                    
+                                    CollapsibleCheckboxList(
+                                        title: "Allergens",
+                                        options: dataModel.allergenType,
+                                        selections: $selectedAllergens
+                                    )
+                                    .environmentObject(dataModel)
+                                        
                                 }
                                     
                             }
@@ -441,6 +448,7 @@ struct IngredientDetailView: View {
         }
     }
 
+    
     
     // Validation function
     private func validateInputs() -> Bool {

@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct CollapsibleCheckboxList: View {
-    @EnvironmentObject var sharedDataModel: SharedDataModel
+    @EnvironmentObject var dataModel: SharedDataModel
     let title: String
     let options: [String]
     @Binding var selections: [String]
-    @State private var isExpanded: Bool = true
+    @State private var isExpanded: Bool = false
     
     
 //    let allergenType: [String] = [
@@ -43,18 +43,19 @@ struct CollapsibleCheckboxList: View {
             .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
 
             if isExpanded {
-                List(sharedDataModel.allergenType, id: \.self) { allergen in
-                        MultipleSelectionRow(title: allergen, isSelected: selections.contains(allergen)) {
-                            if let index = selections.firstIndex(of: allergen) {
-                                selections.remove(at: index)
-                            } else {
-                                selections.append(allergen)
+                            List(options, id: \.self) { allergen in
+                                MultipleSelectionRow(
+                                    title: allergen,
+                                    isSelected: selections.contains(allergen)
+                                ) {
+                                    if let index = selections.firstIndex(of: allergen) {
+                                        selections.remove(at: index)
+                                    } else {
+                                        selections.append(allergen)
+                                    }
+                                }
                             }
-                        }
-                        
-                    }
-                    .frame(maxHeight: .infinity) // Set the height of the options list
-                    .listStyle(.plain)
+                            .listStyle(.plain)
                 
             }
         }

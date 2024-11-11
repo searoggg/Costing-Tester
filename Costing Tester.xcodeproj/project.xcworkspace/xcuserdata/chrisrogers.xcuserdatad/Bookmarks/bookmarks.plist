@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>96</string>
+					<string>97</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>95</string>
+					<string>96</string>
 					<key>Timestamp</key>
-					<string>753043339.44821</string>
+					<string>753062639.290907</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>433</string>
+					<string>440</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>432</string>
+					<string>439</string>
 					<key>Timestamp</key>
-					<string>753043421.2920769</string>
+					<string>753062804.32929</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -151,16 +151,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            if isExpanded {
-</string>
+				<string></string>
 				<key>leading</key>
 				<string>            .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
 
-</string>
+            </string>
 				<key>trailing</key>
-				<string>                List(sharedDataModel.allergenType, id: \.self) { allergen in
-                        MultipleSelectionRow(title: allergen, isSelected: selections.contains(allergen)) {
-                            if let index = selections.firstIndex(of: allergen) {
+				<string>if isExpanded {
+                            List(options, id: \.self) { allergen in
+                                MultipleSelectionRow(
 </string>
 			</dict>
 			<key>title</key>
