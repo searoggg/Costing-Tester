@@ -40,22 +40,27 @@ struct CollapsibleCheckboxList: View {
                 }
             }
             .padding()
-            .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
+            .background(RoundedRectangle(cornerRadius: 5).stroke(Color.purple))
 
             if isExpanded {
-                            List(options, id: \.self) { allergen in
-                                MultipleSelectionRow(
-                                    title: allergen,
-                                    isSelected: selections.contains(allergen)
-                                ) {
-                                    if let index = selections.firstIndex(of: allergen) {
-                                        selections.remove(at: index)
-                                    } else {
-                                        selections.append(allergen)
-                                    }
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 10) {
+                        ForEach(options, id: \.self) { allergen in
+                            MultipleSelectionRow(
+                                title: allergen,
+                                isSelected: selections.contains(allergen)
+                            ) {
+                                if let index = selections.firstIndex(of: allergen) {
+                                    selections.remove(at: index)
+                                } else {
+                                    selections.append(allergen)
                                 }
                             }
-                            .listStyle(.plain)
+                        }
+                    }
+                    .padding(.vertical, 5)
+                }
+                .frame(maxHeight: 200) // Adjust this max height as needed
                 
             }
         }

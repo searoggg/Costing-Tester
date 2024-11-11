@@ -240,8 +240,9 @@ struct IngredientDetailView: View {
                                 }
                                     
                             }
-                           
-                            .padding(.bottom, 1)
+                            .border(Color.red)
+                    
+//                            .padding(.bottom, 1)
                             HStack {
                                 Text("Notes:")
                                     .font(.headline)
