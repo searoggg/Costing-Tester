@@ -228,7 +228,7 @@ struct IngredientDetailView: View {
                                         .padding(.trailing, 10)
                                 }
                                 HStack{
-                                    //create a list of check boxes for allergens that is enclosed in a collapsable list.
+                                     // create a list of allergens including checkboxes to the left of them.
                                     
                                 }
                                     
