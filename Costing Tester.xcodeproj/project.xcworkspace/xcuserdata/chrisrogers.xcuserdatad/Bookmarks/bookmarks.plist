@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>96</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>95</string>
+					<key>Timestamp</key>
+					<string>753043339.44821</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Costing Tester/IngredientDetail.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                                    Picker("Unit Type:", selection: $ingredient.unitType) {
+</string>
+				<key>leading</key>
+				<string>                                    
+                                    
+</string>
+				<key>trailing</key>
+				<string>                                        ForEach(allUnits, id: \.self) { unit in
+                                            Text(unit)
+                                        }
+</string>
+			</dict>
+			<key>title</key>
+			<string>Determine why picker doesn't tab</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>433</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>432</string>
+					<key>Timestamp</key>
+					<string>753043421.2920769</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Costing Tester/IngredientDetail.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>is-complete</key>
+			<true/>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            
+</string>
+				<key>leading</key>
+				<string>            }
+            
+</string>
+				<key>trailing</key>
+				<string>            
+            
+            .frame(maxWidth:.infinity, alignment: .trailing)
+</string>
+			</dict>
+			<key>title</key>
+			<string>Figure out some solution to this shitty button</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Costing Tester/IngredientDetail.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>title</key>
+			<string>Format detail view</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>45</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>44</string>
+					<key>Timestamp</key>
+					<string>753047511.72763</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Costing Tester/CollapsibleCheckboxList.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            if isExpanded {
+</string>
+				<key>leading</key>
+				<string>            .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
+
+</string>
+				<key>trailing</key>
+				<string>                List(sharedDataModel.allergenType, id: \.self) { allergen in
+                        MultipleSelectionRow(title: allergen, isSelected: selections.contains(allergen)) {
+                            if let index = selections.firstIndex(of: allergen) {
+</string>
+			</dict>
+			<key>title</key>
+			<string>Figure out the picker </string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>
