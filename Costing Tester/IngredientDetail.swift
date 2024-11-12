@@ -75,7 +75,7 @@ struct IngredientDetailView: View {
                         VStack {
                             HStack {
                                 Text("Name:")
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 TextField("Ingredient Name", text: $ingredient.name)
                             }
@@ -86,7 +86,7 @@ struct IngredientDetailView: View {
                             
                             HStack {
                                 Text("Units Purchased:")
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 HStack{
                                     TextField("# of Units Purchased", text: $unitsPurchasedText)
@@ -115,7 +115,7 @@ struct IngredientDetailView: View {
                             
                             HStack {
                                 Text("Purchase Cost:")
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 HStack{
                                     Text("$")
@@ -132,7 +132,7 @@ struct IngredientDetailView: View {
                             
                             HStack {
                                 Text("Per Unit Cost:")
-                                    .frame(maxWidth: .infinity, alignment:.trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text("$\(ingredient.perUnitCost, specifier: "%.2f")")
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -144,7 +144,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 
                                 Text("Usable Weight Percentage:")
-                                    .frame(maxWidth: .infinity, alignment:.trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 TextField("Usable Weight Percentage", text: $displayWeightPercentageText)
                                     .border(isDisplayWeightPercentageValid ? Color.clear : Color.red) // Red border if invalid
@@ -159,7 +159,7 @@ struct IngredientDetailView: View {
                             
                             HStack {
                                 Text("Adjusted Cost Per Unit:")
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text("$\(ingredient.adjustedCostPerUnit, specifier: "%.2f")")
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -222,25 +222,31 @@ struct IngredientDetailView: View {
                                 .padding(.vertical, 10)
                             
                             HStack {
-                                HStack{
-                                    Text("Allergens:")
-                                        .font(.headline)
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
-                                        .padding(.trailing, 10)
-                                }
-                                HStack{
-                                    ScrollView {
+                                VStack{
+                                    HStack{
+                                        Text("Allergens:")
+                                            .font(.headline)
+                                            .frame(width: geometry.size.width * 1, alignment: .center)
+                                            .padding(.horizontal, 10)
+                                    }
+                                    .border(Color.green)
+                                    HStack{
+                                        Spacer()
                                         
                                         // create a list of allergens including checkboxes to the left of them.
                                         CollapsibleCheckboxList(
                                             title: "Allergens",
                                             options: dataModel.allergenType,
-                                            selections: $selectedAllergens
+                                            selections: $ingredient.allergens
                                         )
                                         .environmentObject(dataModel)
-                                    }.frame(minHeight: 200)
-                                }
+                                        Spacer()
+
+                                    }
+                                    .frame(width: geometry.size.width * (2/3), alignment: .center)
+
                                     
+                                }
                             }
                             .border(Color.red)
                     
@@ -248,7 +254,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Notes:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text(ingredient.notes)
                                     .frame(maxWidth:.infinity, alignment:.leading)
@@ -266,7 +272,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Name:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 //                                .border(Color.red)
                                 
@@ -281,7 +287,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Units Purchased:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 //                                .border(Color.red)
                                 Text("\(ingredient.unitsPurchased, specifier: "%.2f") \(ingredient.unitType)")
@@ -293,7 +299,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Purchase Cost:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text("$\(ingredient.purchaseCost, specifier: "%.2f")")
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -303,7 +309,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Per Unit Cost:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text("$\(ingredient.perUnitCost, specifier: "%.2f") per \(ingredient.unitType)")
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -313,7 +319,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Usable Weight Percentage:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text("\(ingredient.displayWeightPercentage, specifier: "%.2f")%")
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -325,7 +331,7 @@ struct IngredientDetailView: View {
                                 HStack {
                                     Text("Adjusted Cost Per Unit:")
                                         .font(.headline)
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .frame(width: geometry.size.width / 3, alignment: .trailing)
                                         .padding(.trailing, 10)
                                     Text("$\(ingredient.adjustedCostPerUnit, specifier: "%.2f") per \(ingredient.weightConversionFactor ?? 1, specifier: "%.2f") Pound")
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -335,7 +341,7 @@ struct IngredientDetailView: View {
                                 HStack {
                                     Text("Weight Conversion:")
                                         .font(.headline)
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .frame(width: geometry.size.width / 3, alignment: .trailing)
                                         .padding(.trailing, 10)
                                     HStack {
                                         Text("1")
@@ -360,7 +366,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Allergens:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text(ingredient.allergens.joined(separator: ", "))
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -370,7 +376,7 @@ struct IngredientDetailView: View {
                             HStack {
                                 Text("Notes:")
                                     .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .frame(width: geometry.size.width / 3, alignment: .trailing)
                                     .padding(.trailing, 10)
                                 Text(ingredient.notes)
                                     .frame(maxWidth:.infinity, alignment:.leading)
