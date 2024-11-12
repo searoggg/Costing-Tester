@@ -229,14 +229,16 @@ struct IngredientDetailView: View {
                                         .padding(.trailing, 10)
                                 }
                                 HStack{
-                                     // create a list of allergens including checkboxes to the left of them.
-                                    CollapsibleCheckboxList(
-                                        title: "Allergens",
-                                        options: dataModel.allergenType,
-                                        selections: $selectedAllergens
-                                    )
-                                    .environmentObject(dataModel)
+                                    ScrollView {
                                         
+                                        // create a list of allergens including checkboxes to the left of them.
+                                        CollapsibleCheckboxList(
+                                            title: "Allergens",
+                                            options: dataModel.allergenType,
+                                            selections: $selectedAllergens
+                                        )
+                                        .environmentObject(dataModel)
+                                    }.frame(minHeight: 200)
                                 }
                                     
                             }
