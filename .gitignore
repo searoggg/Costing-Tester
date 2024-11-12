@@ -1,0 +1,11 @@
+# Xcode project user settings
+*.xcuserdata
+*.xcuserstate
+
+
+# Derived data
+DerivedData/
+
+# Other common ignored files
+*.log
+*.DS_Store
