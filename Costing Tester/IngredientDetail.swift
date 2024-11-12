@@ -82,7 +82,7 @@ struct IngredientDetailView: View {
                             .frame(minWidth: 1 * geometry.size.width)
                             //                        .border(Color.yellow)
                             .padding(.bottom, 1)
-                            
+                            // CHECK CHECK CHECK
                             
                             HStack {
                                 Text("Units Purchased:")
